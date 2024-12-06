@@ -8,6 +8,8 @@ const sizeButton = document.querySelector("#sizeButton")
 
 const s = new LinkedStack();
 
+let modificar = document.querySelector("#meuArray")
+
 
 pushButton.addEventListener("click", function (){
     return pushValue()
@@ -19,26 +21,44 @@ sizeButton.addEventListener("click", ()=>sizeValue())
 
 function pushValue() {
   const texto = document.querySelector("#elemento").value
-  alert(s.push(texto))
+  modificar.innerHTML = `${s.push(texto)}`
+  exibirPilha()
+  // alert(s.push(texto))
 //   console.log(s.push(texto))
 }
 
 function popValue(){
-  alert(s.pop())
+  modificar.innerHTML = `${s.pop()}`
+  exibirPilha()
+  // alert(s.pop())
 //   console.log(s.pop())
 }
 
 function peekValue(){
-  alert(s.peek())
+  modificar.innerHTML = `${s.peek()}`
+  // alert(s.peek())
 //   console.log(s.peek())
 }
 
 function isemptyValue(){
-  alert(s.isEmpty())
+  modificar.innerHTML = `${s.isEmpty()}`
+  // alert(s.isEmpty())
 //   console.log(s.isEmpty())
 }
 
 function sizeValue(){
-  alert(s.size())
+  modificar.innerHTML = `${s.size()}`
+  // alert(s.size())
 //   console.log(s.size())
+}
+
+function exibirPilha(){
+  modificar = document.querySelector("#meuArray")
+  modificar.innerHTML = ""
+
+  let temp = s.top
+  while (temp !== null){
+      modificar.innerHTML += `<p>${temp.value}</p>`
+      temp = temp.prev
+  }
 }

@@ -1,4 +1,4 @@
-export default class Stack{
+class Stack{
     constructor(){
         this.stack = []
     }
@@ -21,4 +21,8 @@ export default class Stack{
 }
 
 
-// export {Stack}
+const s = new Stack();
+s.push(9)
+console.log(s.stack)
+
+export {Stack}

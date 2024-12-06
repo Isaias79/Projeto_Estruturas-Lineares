@@ -6,6 +6,8 @@ const peekButton = document.querySelector("#peekButton")
 const isemptyButton = document.querySelector("#isemptyButton")
 const sizeButton = document.querySelector("#sizeButton")
 
+const modificar = document.querySelector("#meuArray")
+
 
 
 pushButton.addEventListener("click", function (){
@@ -19,27 +21,32 @@ sizeButton.addEventListener("click", ()=>sizeValue())
 function pushValue() {
   const texto = document.querySelector("#elemento").value
   push(texto)
-  alert.log(stack)
+  modificar.innerHTML = `${stack}`
+  // alert.log(stack)
   // console.log(stack)
 }
 
 function popValue(){
   pop()
-  alert.log(stack)
+  modificar.innerHTML = `${stack}`
+  // alert.log(stack)
   // console.log(stack)
 }
 
 function peekValue(){
-  alert.log(peek())
+  modificar.innerHTML = `${peek()}`
+  // alert.log(peek())
   // console.log(peek())
 }
 
 function isemptyValue(){
-  alert.log(isEmpty())
+  modificar.innerHTML = `${isEmpty()}`
+  // alert.log(isEmpty())
   // console.log(isEmpty())
 }
 
 function sizeValue(){
-  alert.log(size())
+  modificar.innerHTML = `${size()}`
+  // alert.log(size())
   // console.log(size())
 }
